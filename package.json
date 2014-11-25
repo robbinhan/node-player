@@ -1,0 +1,15 @@
+{
+  "name"         : "node-player",
+  "version"      : "0.0.0",
+  "description"  : "node player",
+  "main"         : "server.js",
+  "author"       : "robbin",
+  "dependencies" : {
+    "koa"    : "~0.13.0",
+    "koa-route"    : "~2.2.0",
+    "co-views"    : "~0.2.0",
+    "ejs"			: "~1.0.0",
+    "bluebird" : "~2.3.11",
+    "longjohn": "~0.2.4"
+    }
+}

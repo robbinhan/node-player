@@ -1,0 +1,45 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="player">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Node/Angular Player App</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="mp3-player-button.css">
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #todo-list              { margin-bottom:30px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="angular.min.js"></script><!-- load angular -->
+    <script type="text/javascript" src="soundmanager2.js"></script>
+    <script type="text/javascript" src="mp3-player-button.js"></script>
+    <script src="core.js"></script>
+
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-controller="mainController">
+    <div class="container">
+        <p><a ng-click="play('shuffle')">Shuffle Play</a></p>
+        <p><a ng-click="play('loop')">Loop Play</a></p>
+        <p>搜索：<input type="search" ng-model="songName"></p>
+        <div id="songs" songs>
+        <p ng-repeat="songInfo in playlist |filter:songName" >
+            <a href="{{ songInfo['path'] }}" title="{{ songInfo['name'] }}" class="sm2_button" >{{ songInfo['name'] }}</a>
+            &nbsp;&nbsp;
+            {{ songInfo['name'] }}
+        </p>
+        </div>
+    </div>
+</body>
+</html>
